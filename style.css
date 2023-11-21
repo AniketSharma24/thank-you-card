@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  user-select: none;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("./assets/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  letter-spacing: 0.8px;
+  padding: 1em;
+}
+.letter {
+  width: 360px;
+  height: 400px;
+  color: white;
+  backdrop-filter: blur(4px) saturate(180%);
+  -webkit-backdrop-filter: blur(4px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  padding: 1.5em;
+  position: relative;
+  transition: 0.5s;
+  opacity: 0;
+}
+.letter,
+h1,
+.content {
+  animation-name: opacity-toggler;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.letter:hover {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+h1 {
+  margin-bottom: 0.89em;
+  font-weight: 400;
+  opacity: 0;
+  animation-delay: 1s;
+}
+.content {
+  font-weight: 300;
+  opacity: 0;
+  animation-delay: 2s;
+}
+.greet {
+  position: absolute;
+  bottom: 1.09em;
+  left: 1.09em;
+  font-size: 1.3em;
+  opacity: 0;
+  animation-delay: 3s;
+  animation-name: opacity-toggler-copy;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.greet > p {
+  font-family: "Caveat", cursive !important;
+  font-weight: 200;
+}
+@keyframes opacity-toggler {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opacity-toggler-copy {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
